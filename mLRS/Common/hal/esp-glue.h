@@ -23,6 +23,16 @@ void __disable_irq(void) {}
 void __enable_irq(void) {}
 
 
+typedef enum {
+    DISABLE = 0,
+    ENABLE = !DISABLE
+} FunctionalState;
+
+
+#define __REV16(x)  __builtin_bswap16(x)
+#define __REVSH(x)  __builtin_bswap16(x)
+#define __REV(x)    __builtin_bswap32(x)
+
 
 // setup(), loop() streamlining between Arduino/STM code
 static uint8_t restart_controller = 0;

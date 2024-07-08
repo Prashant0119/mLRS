@@ -202,7 +202,9 @@ void tTxEspWifiBridge::EnterFlash(void)
 {
     if (!initialized) return;
 
+#ifdef USE_DISPLAY
     disp.DrawNotify("FLASH ESP");
+#endif
 
 #ifdef USE_ESP_WIFI_BRIDGE_RST_GPIO0
     esp_reset_low();

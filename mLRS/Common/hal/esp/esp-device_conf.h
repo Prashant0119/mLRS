@@ -143,6 +143,16 @@
 #endif
 
 
+//-- ELRS Tx Internal Boards
+
+#ifdef TX_ELRS_INTERNAL_RADIOMASTER_TX16S_2400_ESP32
+  #define DEVICE_NAME "RM INTER TX16S 2.4G"
+  #define DEVICE_IS_TRANSMITTER
+  #define DEVICE_HAS_SX128x
+  #define FREQUENCY_BAND_2P4_GHZ
+#endif
+
+
 // -- DIY
 
 #ifdef RX_DIY_DEV_900_ESP8266

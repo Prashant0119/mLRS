@@ -63,6 +63,9 @@ void (*uart_tc_callback_ptr)(void) = &uart_tc_callback_dummy;
 #define UART_RX_CALLBACK_FULL(c)    (*uart_rx_callback_ptr)(c)
 #define UART_TC_CALLBACK()          (*uart_tc_callback_ptr)()
 
+#if defined ESP8266 || defined ESP32
+#include "esp-jr_pin5_interface.h"
+#else
 #include "../modules/stm32ll-lib/src/stdstm32-uart.h"
 
 // not available in stdstm32-uart.h, used for half-duplex mode
@@ -370,5 +373,7 @@ void tPin5BridgeBase::CheckAndRescue(void)
     }
 }
 
+
+#endif // defined ESP8266 || defined ESP32
 
 #endif // JRPIN5_INTERFACE_H

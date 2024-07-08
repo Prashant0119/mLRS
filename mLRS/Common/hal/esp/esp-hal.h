@@ -89,6 +89,13 @@
 #endif
 
 
+//-- ELRS Tx Internal Boards
+
+#ifdef TX_ELRS_INTERNAL_RADIOMASTER_TX16S_2400_ESP32
+#include "tx-hal-internal-radiomaster-tx16s-2400-esp32.h"
+#endif
+
+
 // -- DIY
 
 #ifdef RX_DIY_DEV_900_ESP8266
