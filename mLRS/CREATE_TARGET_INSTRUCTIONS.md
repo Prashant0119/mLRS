@@ -263,8 +263,8 @@ repeat this 3 times for each include path
 
 The define STDSTM32_USE_USB needs to be added to each the GCC and G++ compilers:
 
--> MCU GCC Compiler -> Preprozessor: select "+" icon, enter STDSTM32_USE_USB, click down arrow to move it to last position
--> MCU G++ Compiler -> Preprozessor: select "+" icon, enter STDSTM32_USE_USB, click down arrow to move it to last position
+-> MCU GCC Compiler -> Preprocessor: select "+" icon, enter STDSTM32_USE_USB, click down arrow to move it to last position
+-> MCU G++ Compiler -> Preprocessor: select "+" icon, enter STDSTM32_USE_USB, click down arrow to move it to last position
 
 ### 3. Set HAL_PCD_MODULE_ENABLED
 
