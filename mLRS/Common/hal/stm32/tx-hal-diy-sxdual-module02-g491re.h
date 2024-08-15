@@ -301,9 +301,26 @@ uint8_t fiveway_read(void)
 
 
 //-- POWER
+#ifdef POWER_PA_SKY66312_11 // FRM303
 
-#define POWER_PA_NONE_SX128X
-#include "../hal-power-pa.h"
+#define POWER_GAIN_DBM            24 // 35 // gain of a PA stage if present // datasheet of SKY66312-11 says 35dB !
+#define POWER_SX1280_MAX_DBM      SX1280_POWER_6_DBM //SX1280_POWER_m3_DBM // maximum allowed sx power
+#define POWER_USE_DEFAULT_RFPOWER_CALC
+
+#define RFPOWER_DEFAULT           1 // index into rfpower_list array
+
+const rfpower_t rfpower_list[] = {
+    { .dbm = POWER_MIN, .mW = INT8_MIN },
+    { .dbm = POWER_20_DBM, .mW = 100 },
+    { .dbm = POWER_24_DBM, .mW = 250 },
+    { .dbm = POWER_27_DBM, .mW = 500 },
+    { .dbm = POWER_30_DBM, .mW = 1000 },
+};
+
+#endif
+#ifdef POWER2_PA_SKY66312_11
+  #error POWER2_PA_SKY66312_11 not defined
+#endif
 
 
 //-- TEST
